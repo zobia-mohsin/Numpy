@@ -83,5 +83,3 @@ raveled[0] = 100
 raveled[5] = 99
 
 print()  # run and debug values seen in debug
-
-print()  # run and debug values seen in debug
