@@ -32,7 +32,8 @@ all_students_test0and2 = grades[:, [0, 2]]
 
 
 # EXERCISE
-grades = np.random.randint(60, 101, 12).reshape(3, 4)  # 101 to INCLUDE 100
+grades = np.random.randint(60, 101, 12).reshape(
+    3, 4)  # 101 to INCLUDE 100, 12 numbers
 
 grades.mean()
 
@@ -72,14 +73,32 @@ grades_reshaped = grades.reshape(1, 6)
 
 # Method flatten deep copies the original array's data:
 # always one dimensional array
+# flatten creates a deep copy
 flattened = grades.flatten()
+
 # alternatively, Methods ravel produces a view (shallow copy) of the original array
 # which shares the grades array's data:
-
+# ravel creates a shallow copy
 raveled = grades.ravel()
 
 raveled[0] = 100
 
 raveled[5] = 99
+flattened[1] = 100
+
+grades = np.array([[87, 96, 70], [100, 87, 90]])
+
+# Trnaspose method T, tranposes arrays, rows, and columns, flips the arrays
+
+grades.T
+
+grades2 = np.array([[94, 77, 98], [100, 81, 82]])
+
+# to add more tests to the students, h-stack is adding columns
+h_grades = np.hstack((grades, grades2))
+
+# v-stack, add rows (students)
+v_grades = np.vstack((grades, grades2))
+
 
 print()  # run and debug values seen in debug
